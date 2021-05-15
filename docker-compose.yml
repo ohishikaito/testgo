@@ -25,9 +25,10 @@ services:
     volumes:
       - ./user.sql:/docker-entrypoint-initdb.d/init.sql
       # - db-data:/var/lib/mysql
-      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      # ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
     ports:
       - 13306:3306
 
-volumes:
-  db-data:
+# volumes:
+#   db-data:
